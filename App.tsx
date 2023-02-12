@@ -3,11 +3,7 @@ import { Text, View } from "react-native";
 import IntroScreen from "./src/views/screens/Onboarding/intro";
 
 export default function App() {
-  return (
-    <View>
-      <IntroScreen />
-    </View>
-  );
+  return <IntroScreen />;
 }
 
 // const styles = StyleSheet.create({

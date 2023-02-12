@@ -1,25 +1,52 @@
 import { View, Text, Image, StyleSheet } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
 import React from "react";
 import CustomButton from "../../../components/CustomButton";
+import OnboardingContent from "../../../components/OnboardingContent";
+
+// import lol from '../../../../../'
 
 const IntroScreen = () => {
+  const onboardingData = [
+    {
+      image:
+        "https://res.cloudinary.com/dtwnppsc6/image/upload/v1676201741/images/onb1_jmzfwg.png",
+
+      title: "Find your Comfort Food here",
+      text: "Here You Can finna chef or dish for every taste and color. Enjoy",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dtwnppsc6/image/upload/v1676201742/images/onb2_thrha7.png",
+      title: "Food Ninja is Where Your Comfort Food Lives",
+      text: "Enjoy a fast and smooth food delivery at your door step",
+    },
+  ];
   return (
     <View style={styles.containerTop}>
-      <View style={styles.onboardingContainer}>
-        <Image
-          source={require("../../../../../assets/images/onb1.png")}
-          style={styles.onboardingImage}
-        />
+      {/* <OnboardingContent
+        image={onboardingData[0].image}
+        title={onboardingData[0].title}
+        text={onboardingData[0].text}
+      /> */}
+      <FlatList
+        data={onboardingData}
+        // horizontal
+        renderItem={({ item }) => (
+          <View style={{ flex: 1 }}>
+            <OnboardingContent
+              image={item.image}
+              title={item.title}
+              text={item.text}
+            />
+          </View>
+        )}
+        pagingEnabled
+      />
 
-        <View style={styles.container}>
-          <Text style={styles.title}>Find your Comfort Food here</Text>
-          <Text style={styles.text}>
-            Here You Can finna chef or dish for every taste and color. Enjoy
-          </Text>
-        </View>
+      <View style={{ width: "40%", position: "absolute", bottom: 50 }}>
+        <CustomButton />
       </View>
-
-      <CustomButton />
     </View>
   );
 };
@@ -31,33 +58,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "blue",
-  },
-
-  onboardingContainer: {
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-
-  onboardingImage: {
-    width: "100%",
-    aspectRatio: 1,
-  },
-
-  container: {
-    alignItems: "center",
-    // textAlign: "center",
-    marginHorizontal: "12%",
-  },
-
-  title: {
-    fontSize: 30,
-    fontWeight: "700",
-    textAlign: "center",
-  },
-
-  text: {
-    textAlign: "center",
-    fontSize: 19,
   },
 });
