@@ -24,11 +24,6 @@ const IntroScreen = () => {
   ];
   return (
     <View style={styles.containerTop}>
-      {/* <OnboardingContent
-        image={onboardingData[0].image}
-        title={onboardingData[0].title}
-        text={onboardingData[0].text}
-      /> */}
       <FlatList
         data={onboardingData}
         horizontal
