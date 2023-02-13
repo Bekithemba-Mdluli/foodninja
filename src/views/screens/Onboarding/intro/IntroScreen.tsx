@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import React from "react";
 import CustomButton from "../../../components/CustomButton";
@@ -31,7 +31,7 @@ const IntroScreen = () => {
       /> */}
       <FlatList
         data={onboardingData}
-        // horizontal
+        horizontal
         renderItem={({ item }) => (
           <View style={{ flex: 1 }}>
             <OnboardingContent
