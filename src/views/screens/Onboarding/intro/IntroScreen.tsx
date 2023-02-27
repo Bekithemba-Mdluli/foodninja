@@ -6,7 +6,7 @@ import OnboardingContent from "../../../components/OnboardingContent";
 
 // import lol from '../../../../../'
 
-const IntroScreen = () => {
+const IntroScreen = ({ navigation }: any) => {
   const onboardingData = [
     {
       image:
@@ -40,7 +40,7 @@ const IntroScreen = () => {
       />
 
       <View style={{ width: "40%", position: "absolute", bottom: 50 }}>
-        <CustomButton />
+        <CustomButton handlePress={() => navigation.navigate("Login")} />
       </View>
     </View>
   );

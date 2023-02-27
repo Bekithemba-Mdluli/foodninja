@@ -2,9 +2,9 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import colors from "../../../theme/colors";
 
-const CustomButton = () => {
+const CustomButton = ({ handlePress }: any) => {
   return (
-    <TouchableOpacity style={styles.btn}>
+    <TouchableOpacity style={styles.btn} onPress={handlePress}>
       <Text style={styles.btnText}>Next</Text>
     </TouchableOpacity>
   );
